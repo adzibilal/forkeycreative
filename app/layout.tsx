@@ -1,22 +1,26 @@
-import type { Metadata } from "next";
-import { Montserrat } from "next/font/google";
-import "./globals.css";
+import { Analytics } from '@vercel/analytics/react'
+import type { Metadata } from 'next'
+import { Montserrat } from 'next/font/google'
+import './globals.css'
 
-const motserrat = Montserrat({ subsets: ["latin"] });
+const motserrat = Montserrat({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: "FORKEY CREATIVE",
-  description: "Elevating Your Brand",
-};
+    title: 'FORKEY CREATIVE',
+    description: 'Elevating Your Brand'
+}
 
 export default function RootLayout({
-  children,
+    children
 }: Readonly<{
-  children: React.ReactNode;
+    children: React.ReactNode
 }>) {
-  return (
-    <html lang="en">
-      <body className={motserrat.className}>{children}</body>
-    </html>
-  );
+    return (
+        <html lang='en'>
+            <body className={motserrat.className}>
+                {children}
+                <Analytics />
+            </body>
+        </html>
+    )
 }
