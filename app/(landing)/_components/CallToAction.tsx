@@ -2,7 +2,7 @@ import React from 'react'
 
 const CallToAction = () => {
     return (
-        <div className="bg-[url('/images/call-to-action.png')]">
+        <div className="bg-[url('/images/call-to-action.png')]" id='pricing'>
             <div className='max-con flex flex-col items-center justify-center py-[100px] gap-5 my-5'>
                 <h1 className='text-5xl font-extrabold text-white'>Konsultasikan Sekarang</h1>
                 <div className='text-2xl font-light text-white w-[60%] text-center mb-4'>

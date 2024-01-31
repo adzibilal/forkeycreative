@@ -4,7 +4,7 @@ import { FaStar } from 'react-icons/fa'
 
 const Testimonials = () => {
     return (
-        <div className='bg-zinc-50'>
+        <div className='bg-zinc-50' id='testimonials'>
             <div className='max-con py-28'>
                 <div className='text-zinc-700 text-5xl font-bold text-center uppercase'>
                     Testimonials

@@ -4,7 +4,7 @@ import SliderCLient from './SliderCLient'
 
 const KeyValue = () => {
     return (
-        <div className='bg-white py-20'>
+        <div className='bg-white py-20' id='marketing'>
             <div className='max-con'>
                 <div className='grid grid-cols-2 mb-10'>
                     <div className='flex flex-col items-start justify-center'>
