@@ -5,7 +5,7 @@ import React from 'react'
 
 const Navbar = () => {
     return (
-        <div className='bg-white shadow-lg sticky top-0'>
+        <div className='bg-white shadow-lg sticky top-0 z-50'>
             <div className='max-con py-5 flex justify-between items-center'>
                 <Image
                     src='/images/logo.png'

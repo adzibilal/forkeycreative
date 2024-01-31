@@ -18,7 +18,7 @@ const OurClients = () => {
                     dari seluruh Indonesia
                 </div>
 
-                <div className='mt-5 flex flex-wrap gap-5 items-center justify-center'>
+                <div className='mt-10 max-w-screen-xl flex flex-wrap gap-6 mx-auto items-center justify-center'>
                     {clientImages.map((imageName, index) => (
                         <Image
                             key={index}
