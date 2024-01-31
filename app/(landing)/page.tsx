@@ -4,12 +4,14 @@ import CallToAction from "./_components/CallToAction";
 import OurClients from "./_components/OurClients";
 import KeyValue from "./_components/KeyValue";
 import OurProduct from "./_components/OurProduct";
+import Testimonials from "./_components/Testimonials";
 
 export default function Home() {
   return (
     <div className="">
       <Hero />
       <KeyValue />
+      <Testimonials />
       <OurProduct />
       <OurClients />
       <CallToAction />
