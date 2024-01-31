@@ -5,6 +5,7 @@ import OurClients from "./_components/OurClients";
 import KeyValue from "./_components/KeyValue";
 import OurProduct from "./_components/OurProduct";
 import Testimonials from "./_components/Testimonials";
+import ClientPorto from "./_components/ClientPorto";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <Hero />
       <KeyValue />
       <Testimonials />
+      <ClientPorto />
       <OurProduct />
       <OurClients />
       <CallToAction />

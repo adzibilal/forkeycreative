@@ -4,9 +4,9 @@ import SliderCLient from './SliderCLient'
 
 const KeyValue = () => {
     return (
-        <div className='bg-white'>
+        <div className='bg-white py-20'>
             <div className='max-con'>
-                <div className='grid grid-cols-2'>
+                <div className='grid grid-cols-2 mb-10'>
                     <div className='flex flex-col items-start justify-center'>
                         <div className='text-sm text-blue-primary'>
                             FORKEY CREATIVE MENGHADIRKAN
@@ -35,7 +35,7 @@ const KeyValue = () => {
                         />
                     </div>
                 </div>
-                <div className='grid grid-cols-2'>
+                <div className='grid grid-cols-2 mb-10'>
                     <div className='flex items-center justify-center'>
                         <Image
                             src='/images/img2.png'
@@ -60,7 +60,7 @@ const KeyValue = () => {
                         </div>
                     </div>
                 </div>
-                <div className='grid grid-cols-2'>
+                <div className='grid grid-cols-2 mb-20'>
                     <div className='flex items-center justify-center'>
                         <Image
                             src='/images/img3.png'
@@ -84,7 +84,7 @@ const KeyValue = () => {
                     </div>
                 </div>
 
-                <SliderCLient />
+                <SliderCLient  />
             </div>
         </div>
     )
