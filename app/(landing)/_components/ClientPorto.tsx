@@ -16,7 +16,7 @@ const ClientPorto = () => {
                 </div>
 
 
-                <div className="grid grid-cols-3 gap-5 mt-10">
+                <div className="grid grid-cols-3 gap-5 mt-10 max-lg:grid-cols-2 max-sm:grid-cols-1">
                     {clientPorto.map((item, index) => (
                         <div className="rounded-md overflow-hidden relative group hover:shadow-lg" key={index}>
                             <Image src={item.image} width={1000} height={1000} alt='' className='group-hover:scale-105 transition-all duration-500 ease-out'/>

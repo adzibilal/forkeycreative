@@ -9,7 +9,7 @@ const Footer = () => {
     return (
         <div className='bg-zinc-900 py-16'>
             <div className='max-con'>
-                <div className='grid grid-cols-[1fr_2fr_1.5fr] gap-5'>
+                <div className='grid grid-cols-[1fr_2fr_1.5fr] gap-5 max-lg:grid-cols-2 max-sm:grid-cols-1'>
                     <div className=''>
                         <div className='text-zinc-400 font-semibold mb-2 text-xl'>
                             FORKEY OFFICE
@@ -56,7 +56,7 @@ const Footer = () => {
 
                 <hr className='border-zinc-500 my-14'/>
 
-                <div className="flex items-center justify-between">
+                <div className="flex items-center justify-between max-sm:flex-col max-sm:gap-10">
                     <div className="flex items-center gap-5">
                         <Link className='text-2xl text-zinc-400 hover:text-blue-500' href={'/'}>
                             <FaFacebook />
@@ -72,7 +72,7 @@ const Footer = () => {
                         </Link>
                     </div>
 
-                    <div className="text-zinc-400">FORKEY CREATIVE {currentYear} © All rights reserved.</div>
+                    <div className="text-zinc-400 max-sm:text-center">FORKEY CREATIVE {currentYear} © All rights reserved.</div>
                 </div>
             </div>
         </div>

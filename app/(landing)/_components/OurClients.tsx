@@ -10,7 +10,7 @@ const OurClients = () => {
     return (
         <div>
             <div className='max-con py-28'>
-                <div className='text-zinc-700 text-5xl font-bold text-center uppercase'>
+                <div className='text-zinc-700 text-5xl font-bold text-center uppercase max-sm:text-4xl'>
                     Our Clients
                 </div>
                 <div className='text-zinc-400 text-lg mt-6 text-center'>
