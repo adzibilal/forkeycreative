@@ -1,12 +1,15 @@
 'use client'
 import { promoNotif } from '@/constants/promo'
 import Image from 'next/image'
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import toast from 'react-hot-toast'
+import Swal from 'sweetalert2'
 
 import { AiOutlineClose } from 'react-icons/ai'
 
 const Promo = () => {
+    const [showModal, setShowModal] = useState(false)
+    const [isClosed, setIsClosed] = useState(false)
     const listPromo = promoNotif
 
     const showToast = () => {
@@ -55,6 +58,45 @@ const Promo = () => {
             }
         )
     }
+
+    const hideModal = () => {
+        Swal.fire({
+            title: 'Kamu Yakin ?',
+            text: 'Promo ini diskon hanya untuk 10 orang aja loh!',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Ya'
+        }).then(result => {
+            if (result.isConfirmed) {
+                setShowModal(false)
+                setIsClosed(true)
+            }
+        })
+    }
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const scrollPercentage =
+                (window.scrollY /
+                    (document.documentElement.scrollHeight -
+                        window.innerHeight)) *
+                100
+
+            if (scrollPercentage >= 35 && !showModal && !isClosed) {
+                setShowModal(true)
+            }
+        }
+
+        window.addEventListener('scroll', handleScroll)
+
+        // Cleanup event listener when component unmounts
+        return () => {
+            window.removeEventListener('scroll', handleScroll)
+        }
+    }, [isClosed, showModal])
+
     useEffect(() => {
         const intervalId = setInterval(() => {
             showToast()
@@ -62,16 +104,31 @@ const Promo = () => {
 
         // Membersihkan interval ketika komponen unmount
         return () => clearInterval(intervalId)
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     return (
-        <div className='fixed bottom-5 left-5 bg-blue-primary max-w-[350px] p-5 rounded-lg'>
-            <div className='text-white mb-2 text-md'>
-                DISKON KHUSUS UNTUK 10 ORANG CLIENT DIHARI INI AKAN MENDAPATKAN
-                POTONGAN HARGA SEBESAR <b>Rp. 200.000</b>!
-            </div>
-            <div className='bg-yellow-primary font-bold py-2 px-3 text-center rounded-md cursor-pointer'>
-                Whatsapp Sekarang
+        <div
+            className={`modal-promo ${
+                !showModal ? 'hidden' : ''
+            } fixed bottom-0 left-0 w-screen h-screen bg-zinc-900/80 z-50 flex items-center justify-center`}>
+            <div className='bg-blue-primary max-w-md p-5 rounded-lg relative'>
+                <div
+                    className='absolute right-3 top-3 text-white text-xl cursor-pointer'
+                    onClick={e => {
+                        e.preventDefault()
+                        e.stopPropagation()
+                        hideModal()
+                    }}>
+                    <AiOutlineClose />
+                </div>
+                <div className='text-white mb-5 text-md text-center'>
+                    DISKON KHUSUS UNTUK 10 ORANG CLIENT DIHARI INI AKAN
+                    MENDAPATKAN POTONGAN HARGA SEBESAR <b>Rp. 200.000</b>!
+                </div>
+                <div className='bg-yellow-primary font-bold py-2 px-3 text-center rounded-md cursor-pointer'>
+                    Whatsapp Sekarang
+                </div>
             </div>
         </div>
     )
