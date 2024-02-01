@@ -11,19 +11,19 @@ const Hero = () => {
                         height={500}
                         alt=''
                         src='/images/hero.png'
-                        className='h-[70vh] max-lg:h-[55vh] w-auto mx-auto'
+                        className='h-[70vh] max-lg:h-[55vh] w-auto mx-auto max-sm:mt-10'
                     />
                     <div className='max-lg:text-center max-lg:mt-5'>
                         <div className='text-blue-primary tracking-widest'>
                             FORKEY CREATIVE
                         </div>
-                        <div className='text-zinc-800 text-5xl leading-[50px] mt-2'>
+                        <div className='text-zinc-800 text-5xl leading-[50px] mt-2 max-sm:text-4xl'>
                             Bingung Gimana <br />{' '}
                             <span className='font-bold'>
                                 Caranya Bikin Konten?
                             </span>
                         </div>
-                        <div className='text-zinc-400 text-2xl mt-5'>
+                        <div className='text-zinc-400 text-2xl mt-5 max-sm:text-sm'>
                             Padahal target penjualan masih jauh. Gausah <br />{' '}
                             bingung lagi, FORKEY CREATIVE BANTU!
                         </div>
