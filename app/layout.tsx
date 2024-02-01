@@ -2,6 +2,7 @@ import { Analytics } from '@vercel/analytics/react'
 import type { Metadata } from 'next'
 import { Montserrat } from 'next/font/google'
 import './globals.css'
+import { Toaster } from 'react-hot-toast';
 
 const motserrat = Montserrat({ subsets: ['latin'] })
 
@@ -20,6 +21,7 @@ export default function RootLayout({
             <body className={motserrat.className}>
                 {children}
                 <Analytics />
+                <Toaster />
             </body>
         </html>
     )
