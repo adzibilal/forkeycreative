@@ -112,7 +112,7 @@ const Promo = () => {
             className={`modal-promo ${
                 !showModal ? 'hidden' : ''
             } fixed bottom-0 left-0 w-screen h-screen bg-zinc-900/80 z-50 flex items-center justify-center`}>
-            <div className='bg-blue-primary max-w-md p-5 rounded-lg relative'>
+            <div className='bg-blue-primary max-w-md p-5 rounded-lg relative max-sm:mx-5'>
                 <div
                     className='absolute right-3 top-3 text-white text-xl cursor-pointer'
                     onClick={e => {
