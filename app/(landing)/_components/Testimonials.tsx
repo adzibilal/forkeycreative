@@ -6,14 +6,14 @@ const Testimonials = () => {
     return (
         <div className='bg-zinc-50' id='testimonials'>
             <div className='max-con py-28'>
-                <div className='text-zinc-700 text-5xl font-bold text-center uppercase'>
+                <div className='text-zinc-700 text-5xl font-bold text-center uppercase max-sm:text-4xl'>
                     Testimonials
                 </div>
                 <div className='text-zinc-400 text-lg mt-6 text-center'>
                     Kata Mereka
                 </div>
 
-                <div className='grid grid-cols-3 gap-5 mt-10'>
+                <div className='grid grid-cols-3 gap-5 mt-10 max-lg:grid-cols-2 max-sm:grid-cols-1'>
                     {testimonials.map((item, index) => (
                         <div
                             key={index}
