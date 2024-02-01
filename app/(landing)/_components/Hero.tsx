@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 const Hero = () => {
@@ -27,10 +28,15 @@ const Hero = () => {
                             Padahal target penjualan masih jauh. Gausah <br />{' '}
                             bingung lagi, FORKEY CREATIVE BANTU!
                         </div>
-
-                        <div className='bg-blue-primary hover:bg-blue-900 px-5 py-2 cursor-pointer text-white w-max rounded-md mt-7 max-lg:mx-auto'>
-                            Hubungi Sekarang
-                        </div>
+                        <Link
+                            href={
+                                'https://api.whatsapp.com/send?phone=6285173076203&text=Halo%20Forkey%20Creative%20saya%20ingin%20bekerja%20sama%20%F0%9F%91%8B'
+                            }
+                            target='_blank'>
+                            <div className='bg-blue-primary hover:bg-blue-900 px-5 py-2 cursor-pointer text-white w-max rounded-md mt-7 max-lg:mx-auto'>
+                                Hubungi Sekarang
+                            </div>
+                        </Link>
                     </div>
                 </div>
             </div>

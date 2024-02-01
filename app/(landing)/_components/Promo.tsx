@@ -6,6 +6,7 @@ import toast from 'react-hot-toast'
 import Swal from 'sweetalert2'
 
 import { AiOutlineClose } from 'react-icons/ai'
+import Link from 'next/link'
 
 const Promo = () => {
     const [showModal, setShowModal] = useState(false)
@@ -126,9 +127,15 @@ const Promo = () => {
                     DISKON KHUSUS UNTUK 10 ORANG CLIENT DIHARI INI AKAN
                     MENDAPATKAN POTONGAN HARGA SEBESAR <b>Rp. 200.000</b>!
                 </div>
-                <div className='bg-yellow-primary font-bold py-2 px-3 text-center rounded-md cursor-pointer'>
-                    Whatsapp Sekarang
-                </div>
+                <Link
+                    href={
+                        'https://api.whatsapp.com/send?phone=6285173076203&text=Halo%20Forkey%20Creative%20saya%20ingin%20bekerja%20sama%20%F0%9F%91%8B'
+                    }
+                    target='_blank'>
+                    <div className='bg-yellow-primary font-bold py-2 px-3 text-center rounded-md cursor-pointer'>
+                        Whatsapp Sekarang
+                    </div>
+                </Link>
             </div>
         </div>
     )
