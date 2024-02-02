@@ -7,10 +7,12 @@ import OurProduct from './_components/OurProduct'
 import Testimonials from './_components/Testimonials'
 import ClientPorto from './_components/ClientPorto'
 import Promo from './_components/Promo'
+import SliderHero from './_components/SliderHero'
 
 export default function Home() {
     return (
         <div className=''>
+            <SliderHero />
             <Hero />
             <KeyValue />
             <Testimonials />
