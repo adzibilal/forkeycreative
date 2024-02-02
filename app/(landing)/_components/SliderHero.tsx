@@ -44,6 +44,7 @@ const SliderHero = () => {
                                     width={1900}
                                     height={900}
                                     alt=''
+                                    loading='eager'
                                 />
                                 <Image
                                     className='hidden max-md:block object-cover'
@@ -51,6 +52,7 @@ const SliderHero = () => {
                                     width={1024}
                                     height={768}
                                     alt=''
+                                    loading='eager'
                                 />
                             </Link>
                         </SwiperSlide>
@@ -63,6 +65,7 @@ const SliderHero = () => {
                                     width={1900}
                                     height={900}
                                     alt=''
+                                    loading='eager'
                                 />
                                 <Image
                                     className='hidden max-md:block object-cover'
@@ -70,6 +73,7 @@ const SliderHero = () => {
                                     width={1024}
                                     height={768}
                                     alt=''
+                                    loading='eager'
                                 />
                             </Link>
                         </SwiperSlide>
