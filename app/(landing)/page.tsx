@@ -13,7 +13,7 @@ export default function Home() {
     return (
         <div className=''>
             <SliderHero />
-            <Hero />
+            {/* <Hero /> */}
             <KeyValue />
             <Testimonials />
             <ClientPorto />
