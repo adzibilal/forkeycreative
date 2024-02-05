@@ -52,7 +52,7 @@ const SliderHero = () => {
                         modules={[Autoplay]}
                         className='mySwiper'>
                         <SwiperSlide>
-                            <div onClick={handleClickSlider}>
+                            <div onClick={handleClickSlider} className='cursor-pointer'>
                                 <Image
                                     className='aspect-[21/9] max-md:hidden object-cover'
                                     src='/images/slider-1.png'
@@ -73,7 +73,7 @@ const SliderHero = () => {
                         </SwiperSlide>
                         
                         <SwiperSlide>
-                            <div onClick={handleClickSlider}>
+                            <div onClick={handleClickSlider} className='cursor-pointer'>
                                 <Image
                                     className='aspect-[21/9] max-md:hidden object-cover'
                                     src='/images/slider-1.png'
