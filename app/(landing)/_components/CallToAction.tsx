@@ -1,7 +1,22 @@
+'use client'
 import Link from 'next/link'
 import React from 'react'
+import * as pixel from '@/lib/fbpixel'
 
 const CallToAction = () => {
+    const handleCta = () => {
+        pixel.btnWhatsApp()
+
+        const text = `Halo Forkey Creative saya ingin bekerja sama 👋`
+
+        // Membuat URL WhatsApp dengan parameter yang dinamis
+        const waURL = `https://api.whatsapp.com/send?phone=6285173076203&text=${encodeURIComponent(
+            text
+        )}`
+
+        // Membuka jendela baru dengan URL WhatsApp
+        window.open(waURL, '_blank')
+    }
     return (
         <div className="bg-[url('/images/call-to-action.png')]" id='pricing'>
             <div className='max-con flex flex-col items-center justify-center py-[100px] gap-5 my-5'>
@@ -13,15 +28,9 @@ const CallToAction = () => {
                     digital dan menjadi yang terbaik dibidangnya!
                 </div>
 
-                <Link
-                    href={
-                        'https://api.whatsapp.com/send?phone=6285173076203&text=Halo%20Forkey%20Creative%20saya%20ingin%20bekerja%20sama%20%F0%9F%91%8B'
-                    }
-                    target='_blank'>
-                    <div className='bg-green-500 hover:bg-green-600 px-5 py-2 rounded-sm cursor-pointer font-bold text-white'>
-                        WhatsApp Sekarang
-                    </div>
-                </Link>
+                <div onClick={handleCta} className='bg-green-500 hover:bg-green-600 px-5 py-2 rounded-sm cursor-pointer font-bold text-white'>
+                    WhatsApp Sekarang
+                </div>
             </div>
         </div>
     )
