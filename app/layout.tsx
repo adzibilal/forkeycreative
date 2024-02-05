@@ -4,13 +4,27 @@ import { Montserrat } from 'next/font/google'
 import './globals.css'
 import { Toaster } from 'react-hot-toast'
 import FacebookPixel from './_components/FacebookPixel'
-import Head from 'next/head'
+import { url } from 'inspector'
 
 const motserrat = Montserrat({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
     title: 'FORKEY CREATIVE',
-    description: 'Elevating Your Brand'
+    description: 'Elevating Your Brand',
+    openGraph: {
+        title: 'FORKEY CREATIVE',
+        description: 'Elevating Your Brand',
+        url: 'https://forkeycreative.com',
+        siteName: 'Next.js',
+        images: [
+            {
+                url: 'https://forkeycreative.com/api/og',
+                width: 1200,
+                height: 630,
+                alt: 'Forkey Creative'
+            },
+        ]
+    }
 }
 
 export default function RootLayout({
@@ -21,14 +35,6 @@ export default function RootLayout({
     return (
         <html lang='en'>
             <body className={motserrat.className}>
-                <Head>
-                    <meta
-                        property='og:image'
-                        content='/images/meta-img.png'
-                    />
-                    <meta property='og:image:width' content='1900' />
-                    <meta property='og:image:height' content='950' />
-                </Head>
                 {children}
                 <Analytics />
                 <FacebookPixel />
