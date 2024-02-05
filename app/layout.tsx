@@ -18,7 +18,7 @@ export const metadata: Metadata = {
         siteName: 'Next.js',
         images: [
             {
-                url: 'https://forkeycreative.com/api/og',
+                url: 'https://www.forkeycreative.com/images/meta-img.png',
                 width: 1200,
                 height: 630,
                 alt: 'Forkey Creative'
