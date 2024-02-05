@@ -7,6 +7,7 @@ import Swal from 'sweetalert2'
 
 import { AiOutlineClose } from 'react-icons/ai'
 import Link from 'next/link'
+import * as pixel from '@/lib/fbpixel'
 
 const Promo = () => {
     const [showModal, setShowModal] = useState(false)
@@ -77,6 +78,20 @@ const Promo = () => {
         })
     }
 
+    const handleCta = () => {
+        pixel.btnWhatsApp()
+
+        const text = `Halo Forkey Creative saya ingin bekerja sama 👋`
+
+        // Membuat URL WhatsApp dengan parameter yang dinamis
+        const waURL = `https://api.whatsapp.com/send?phone=6285173076203&text=${encodeURIComponent(
+            text
+        )}`
+
+        // Membuka jendela baru dengan URL WhatsApp
+        window.open(waURL, '_blank')
+    }
+
     useEffect(() => {
         const handleScroll = () => {
             const scrollPercentage =
@@ -127,15 +142,11 @@ const Promo = () => {
                     DISKON KHUSUS UNTUK 10 ORANG CLIENT DIHARI INI AKAN
                     MENDAPATKAN POTONGAN HARGA SEBESAR <b>Rp. 200.000</b>!
                 </div>
-                <Link
-                    href={
-                        'https://api.whatsapp.com/send?phone=6285173076203&text=Halo%20Forkey%20Creative%20saya%20ingin%20bekerja%20sama%20%F0%9F%91%8B'
-                    }
-                    target='_blank'>
-                    <div className='bg-yellow-primary font-bold py-2 px-3 text-center rounded-md cursor-pointer'>
-                        Whatsapp Sekarang
-                    </div>
-                </Link>
+                <div
+                    onClick={handleCta}
+                    className='bg-yellow-primary font-bold py-2 px-3 text-center rounded-md cursor-pointer'>
+                    Whatsapp Sekarang
+                </div>
             </div>
         </div>
     )

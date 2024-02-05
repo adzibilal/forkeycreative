@@ -9,9 +9,24 @@ import 'swiper/css/pagination'
 import { Autoplay } from 'swiper/modules'
 
 import Image from 'next/image'
-import Link from 'next/link'
+import * as pixel from '@/lib/fbpixel'
+
 
 const SliderHero = () => {
+    function handleClickSlider() {
+        pixel.clickSlider()
+
+        const text = `Halo Forkey Creative saya ingin bekerja sama 👋`
+
+        // Membuat URL WhatsApp dengan parameter yang dinamis
+        const waURL = `https://api.whatsapp.com/send?phone=6285173076203&text=${encodeURIComponent(
+            text
+        )}`
+
+        // Membuka jendela baru dengan URL WhatsApp
+        window.open(waURL, '_blank')
+    }
+
     return (
         <div className='bg-white'>
             <div className='max-con pb-10 pt-10'>
@@ -37,7 +52,7 @@ const SliderHero = () => {
                         modules={[Autoplay]}
                         className='mySwiper'>
                         <SwiperSlide>
-                            <Link href={'/'}>
+                            <div onClick={handleClickSlider}>
                                 <Image
                                     className='aspect-[21/9] max-md:hidden object-cover'
                                     src='/images/slider-1.png'
@@ -54,11 +69,11 @@ const SliderHero = () => {
                                     alt=''
                                     loading='eager'
                                 />
-                            </Link>
+                            </div>
                         </SwiperSlide>
                         
                         <SwiperSlide>
-                            <Link href={'/'}>
+                            <div onClick={handleClickSlider}>
                                 <Image
                                     className='aspect-[21/9] max-md:hidden object-cover'
                                     src='/images/slider-1.png'
@@ -75,7 +90,7 @@ const SliderHero = () => {
                                     alt=''
                                     loading='eager'
                                 />
-                            </Link>
+                            </div>
                         </SwiperSlide>
                         
                     </Swiper>
