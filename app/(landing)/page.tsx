@@ -8,6 +8,7 @@ import Testimonials from './_components/Testimonials'
 import ClientPorto from './_components/ClientPorto'
 import Promo from './_components/Promo'
 import SliderHero from './_components/SliderHero'
+import FloatingButton from './_components/FloatingButton'
 
 export default function Home() {
     return (
@@ -21,6 +22,7 @@ export default function Home() {
             <OurClients />
             <CallToAction />
             <Promo />
+            <FloatingButton />
         </div>
     )
 }
