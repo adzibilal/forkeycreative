@@ -11,7 +11,7 @@ import Image from 'next/image'
 
 const SliderCLient = () => {
     const clientImages = Array.from(
-        { length: 14 },
+        { length: 9 },
         (_, index) => `client${index + 1}.png`
     )
 

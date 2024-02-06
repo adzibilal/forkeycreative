@@ -15,6 +15,7 @@ const Promo = () => {
     const listPromo = promoNotif
 
     const showToast = () => {
+        toast.dismiss();
         const randomIndex = Math.floor(Math.random() * listPromo.length)
         const randomPromo = listPromo[randomIndex]
 
