@@ -1,5 +1,7 @@
 import React from 'react'
 import SliderProduct from './SliderProduct'
+import { productList } from '@/constants/products'
+import Image from 'next/image'
 
 const OurProduct = () => {
     return (
@@ -12,6 +14,8 @@ const OurProduct = () => {
                     Forkey creative sudah berpengalaman menangani 200+ Brand
                     dari seluruh Indonesia
                 </div>
+
+                
 
                 <SliderProduct />
             </div>
