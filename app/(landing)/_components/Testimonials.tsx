@@ -18,23 +18,27 @@ const Testimonials = () => {
                         <div
                             key={index}
                             className='bg-white rounded-xl shadow-sm p-5'>
-                            <div className='flex gap-1 mb-2 items-center text-yellow-500'>
-                                <FaStar />
-                                <FaStar />
-                                <FaStar />
-                                <FaStar />
-                                <FaStar />
-                            </div>
-                            <div className='font-bold'>{item.name}</div>
-                            <div className='text-sm text-zinc-400'>
-                                {item.job}
-                            </div>
+                            {item && (
+                                <>
+                                    <div className='flex gap-1 mb-2 items-center text-yellow-500'>
+                                        <FaStar />
+                                        <FaStar />
+                                        <FaStar />
+                                        <FaStar />
+                                        <FaStar />
+                                    </div>
+                                    <div className='font-bold'>{item.name}</div>
+                                    <div className='text-sm text-zinc-400'>
+                                        {item.job}
+                                    </div>
 
-                            <hr className='border-zinc-100 my-5' />
+                                    <hr className='border-zinc-100 my-5' />
 
-                            <div className='italic text-zinc-400'>
-                                {item.comment}
-                            </div>
+                                    <div className='italic text-zinc-400'>
+                                        {item.comment}
+                                    </div>
+                                </>
+                            )}
                         </div>
                     ))}
                 </div>
