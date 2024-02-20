@@ -1,11 +1,8 @@
+import { clientLogo } from '@/constants/client'
 import Image from 'next/image'
 import React from 'react'
 
 const OurClients = () => {
-    const clientImages = Array.from(
-        { length: 36 },
-        (_, index) => `c${index + 1}.png`
-    )
 
     return (
         <div>
@@ -19,13 +16,14 @@ const OurClients = () => {
                 </div>
 
                 <div className='mt-10 max-w-screen-xl flex flex-wrap gap-6 mx-auto items-center justify-center'>
-                    {clientImages.map((imageName, index) => (
+                    {clientLogo.map((imageName, index) => (
                         <Image
                             key={index}
                             width={100}
                             height={100}
                             alt=''
-                            src={`/client/${imageName}`}
+                            src={`${imageName}`}
+                            className='aspect-square rounded-full object-contain'
                         />
                     ))}
                 </div>
