@@ -9,8 +9,17 @@ const FloatingButton = () => {
 
         const text = `Halo Forkey Creative saya ingin bekerja sama 👋`
 
-        // Membuat URL WhatsApp dengan parameter yang dinamis
-        const waURL = `https://api.whatsapp.com/send?phone=6285173076203&text=${encodeURIComponent(
+        // Mendefinisikan dua nomor telepon
+        const phoneNumber1 = '6285173076203'
+        const phoneNumber2 = '6282129933883'
+
+        // Memilih nomor telepon secara acak
+        const randomNumber = Math.random()
+        const selectedPhoneNumber =
+            randomNumber < 0.5 ? phoneNumber1 : phoneNumber2
+
+        // Membuat URL WhatsApp dengan nomor telepon yang dipilih secara dinamis
+        const waURL = `https://api.whatsapp.com/send?phone=${selectedPhoneNumber}&text=${encodeURIComponent(
             text
         )}`
 

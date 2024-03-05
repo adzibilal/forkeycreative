@@ -11,15 +11,23 @@ import { Autoplay } from 'swiper/modules'
 import Image from 'next/image'
 import * as pixel from '@/lib/fbpixel'
 
-
 const SliderHero = () => {
     function handleClickSlider() {
         pixel.clickSlider()
 
         const text = `Halo Forkey Creative saya ingin bekerja sama 👋`
 
-        // Membuat URL WhatsApp dengan parameter yang dinamis
-        const waURL = `https://api.whatsapp.com/send?phone=6285173076203&text=${encodeURIComponent(
+        // Mendefinisikan dua nomor telepon
+        const phoneNumber1 = '6285173076203'
+        const phoneNumber2 = '6282129933883'
+
+        // Memilih nomor telepon secara acak
+        const randomNumber = Math.random()
+        const selectedPhoneNumber =
+            randomNumber < 0.5 ? phoneNumber1 : phoneNumber2
+
+        // Membuat URL WhatsApp dengan nomor telepon yang dipilih secara dinamis
+        const waURL = `https://api.whatsapp.com/send?phone=${selectedPhoneNumber}&text=${encodeURIComponent(
             text
         )}`
 
@@ -52,7 +60,9 @@ const SliderHero = () => {
                         modules={[Autoplay]}
                         className='mySwiper'>
                         <SwiperSlide>
-                            <div onClick={handleClickSlider} className='cursor-pointer'>
+                            <div
+                                onClick={handleClickSlider}
+                                className='cursor-pointer'>
                                 <Image
                                     className='aspect-[21/9] max-md:hidden object-cover'
                                     src='/images/slider-1.png'
@@ -71,9 +81,11 @@ const SliderHero = () => {
                                 />
                             </div>
                         </SwiperSlide>
-                        
+
                         <SwiperSlide>
-                            <div onClick={handleClickSlider} className='cursor-pointer'>
+                            <div
+                                onClick={handleClickSlider}
+                                className='cursor-pointer'>
                                 <Image
                                     className='aspect-[21/9] max-md:hidden object-cover'
                                     src='/images/slider-1.png'
@@ -92,7 +104,6 @@ const SliderHero = () => {
                                 />
                             </div>
                         </SwiperSlide>
-                        
                     </Swiper>
                 </div>
             </div>

@@ -1,8 +1,31 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
+import * as pixel from '@/lib/fbpixel'
 
 const Hero = () => {
+    const handleCta = () => {
+        pixel.btnWhatsApp()
+
+        const text = `Halo Forkey Creative saya ingin bekerja sama 👋`
+
+        // Mendefinisikan dua nomor telepon
+        const phoneNumber1 = '6285173076203'
+        const phoneNumber2 = '6282129933883'
+
+        // Memilih nomor telepon secara acak
+        const randomNumber = Math.random()
+        const selectedPhoneNumber =
+            randomNumber < 0.5 ? phoneNumber1 : phoneNumber2
+
+        // Membuat URL WhatsApp dengan nomor telepon yang dipilih secara dinamis
+        const waURL = `https://api.whatsapp.com/send?phone=${selectedPhoneNumber}&text=${encodeURIComponent(
+            text
+        )}`
+
+        // Membuka jendela baru dengan URL WhatsApp
+        window.open(waURL, '_blank')
+    }
     return (
         <div className='bg-zinc-50'>
             <div className='max-con min-h-[80vh] flex items-center max-lg:pb-20'>
@@ -28,15 +51,12 @@ const Hero = () => {
                             Padahal target penjualan masih jauh. Gausah <br />{' '}
                             bingung lagi, FORKEY CREATIVE BANTU!
                         </div>
-                        <Link
-                            href={
-                                'https://api.whatsapp.com/send?phone=6285173076203&text=Halo%20Forkey%20Creative%20saya%20ingin%20bekerja%20sama%20%F0%9F%91%8B'
-                            }
-                            target='_blank'>
-                            <div className='bg-blue-primary hover:bg-blue-900 px-5 py-2 cursor-pointer text-white w-max rounded-md mt-7 max-lg:mx-auto'>
-                                Hubungi Sekarang
-                            </div>
-                        </Link>
+
+                        <div
+                            onClick={handleCta}
+                            className='bg-blue-primary hover:bg-blue-900 px-5 py-2 cursor-pointer text-white w-max rounded-md mt-7 max-lg:mx-auto'>
+                            Hubungi Sekarang
+                        </div>
                     </div>
                 </div>
             </div>
